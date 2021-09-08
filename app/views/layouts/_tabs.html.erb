@@ -1,10 +1,19 @@
-<div class="tabs has-text-primary">
+<div class="tabs has-text-primary is-boxed">
   <ul>
     <li class="<%= is_active?(:authors) %>" >
       <%= link_to "Authors", authors_path %>
     </li>
     <li class="<%= active_page?(:books) %>">
       <%= link_to "Books", books_path %>
+    </li>
+    <li class="<%= active_page?(:publishers) %>">
+      <%= link_to "Publishers", publishers_path %>
+    </li>
+    <li class="<%= active_page?(:regions) %>">
+      <%= link_to "Regions", regions_path %>
+    </li>
+    <li class="<%= active_page?(:publications) %>">
+      <%= link_to "Publications", publications_path %>
     </li>
   </ul>
 </div>

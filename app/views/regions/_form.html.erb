@@ -1,0 +1,30 @@
+<div class="tile box is-vertical is-5">
+  <div class="p-5">
+  <h1 class="title"><%= action_controller_title %></h1>  
+  <%= form_with(model: region, class:"form") do |form| %>
+    <% if region.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(region.errors.count, "error") %> prohibited this region from being saved:</h2>
+
+        <ul>
+          <% region.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :name, class:"label" %>
+
+      <div class="control">
+        <%= form.text_field :name, class:"input is-small" %>
+      </div>
+    </div>
+
+    <div class="actions control is-flex-direction-row is-align-content-end is-align-content-space-around">
+      <%= form.submit "Create #{controller_single_camel}", class: "button is-link is-primary is-small" %>
+    </div>
+  <% end %>
+  </div>
+</div>

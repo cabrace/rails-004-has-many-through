@@ -1,13 +1,13 @@
 <div class="tile box is-vertical is-4 ml-4 p-3">
   <div class="p-5">
     <h1 class="title"><%= action_controller_title %></h1>  
-    <%= form_with(model: author, class:"form") do |form| %>
-      <% if author.errors.any? %>
+    <%= form_with(model: publisher, class:"form") do |form| %>
+      <% if publisher.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(author.errors.count, "error") %> prohibited this author from being saved:</h2>
+          <h2><%= pluralize(publisher.errors.count, "error") %> prohibited this publisher from being saved:</h2>
 
           <ul>
-            <% author.errors.each do |error| %>
+            <% publisher.errors.each do |error| %>
               <li><%= error.full_message %></li>
             <% end %>
           </ul>
@@ -21,8 +21,8 @@
         </div>
       </div>
 
-      <div class="actions control">
-        <%= form.submit "Create #{controller_single_camel}", class:"button is-link is-primary" %>
+      <div class="actions control is-flex-direction-row is-align-content-end is-align-content-space-around">
+        <%= form.submit "Create #{controller_single_camel}", class: "button is-link is-primary is-small" %>
       </div>
     <% end %>
   </div>

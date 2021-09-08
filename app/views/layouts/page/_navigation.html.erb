@@ -1,0 +1,20 @@
+<div class="content box is-small">
+  <!--<i class="far fa-dot-circle"></i>-->
+      <i class="far fa-bookmark mr-3"></i>
+      <!--<i class="fas fa-bookmark"></i>-->
+      <!--<i class="fas fa-book"></i>-->
+  <%= link_to_if(action_name != "index","#{controller_name}", controller:"#{controller_name}", class:"ml-3") do %>
+  <span class="ml-3"><%= "#{controller_name}" %></span>
+  <% end %>
+  <% if action_name != "index" %> 
+    <span>
+      <!--<i class="far fa-arrow-alt-circle-right"></i>-->
+      <!--<i class="fas fa-long-arrow-alt-right"></i>-->
+      <!--<i class="fas fa-angle-double-right"></i>-->
+      <i class="fas fa-angle-right ml-2"></i>
+      <!--<i class="fas fa-caret-right"></i>-->
+    </span>
+    <span class="ml-1"><%= action_name %></span>
+  <%  end %>
+  <!--<span><%= "new #{page_name} "%></span>-->
+</div>

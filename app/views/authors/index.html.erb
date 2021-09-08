@@ -1,11 +1,8 @@
 <div class="block">
+
   <p id="notice"><%= notice %></p>
 
-  <h1 class="title">Authors</h1>
-
-  <div class="block">
-    <%= link_to 'New Author +', new_author_path %>
-  </div>
+<%= render "layouts/page/title_new_path" %>
 
   <table class="table is-cell-bordered no-background">
     <thead>
@@ -18,13 +15,13 @@
 
     <tbody>
       <% @authors.each do |author| %>
-      <tr>
-        <td><%= author.id %></td>
-        <td><%= author.name %></td>
-        <td><%= link_to 'Show', author %></td>
-        <td><%= link_to 'Edit', edit_author_path(author) %></td>
-        <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr>
+          <td><%= author.id %></td>
+          <td><%= author.name %></td>
+          <td><%= link_to 'Show', author %></td>
+          <td><%= link_to 'Edit', edit_author_path(author) %></td>
+          <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>

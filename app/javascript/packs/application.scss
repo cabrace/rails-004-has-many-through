@@ -18,21 +18,54 @@ $family-sans-serif: "Nunito", sans-serif;
 $grey-dark: $brown;
 $grey-light: $beige-light;
 $primary: $purple;
+$secondary: $pink;
 $link: $pink;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
 // Update some of Bulma's component variables
+// G E N E R A L
 $body-background-color: $beige-lighter;
-$control-border-width: 2px;
-$input-border-color: transparent;
+
+// F O R M 
+// input 
+$control-border-width: 1px;
+$input-border-color: #8a6b7033;
 $input-shadow: none;
+
+
+// T A B S
+$tabs-background: white;
+
+
+// B O X   V a r i a b l e s 
+$box-padding: 10px;
+
+
+
+// C u s t o m
+
+.is-secondary{
+  border-color: $secondary;
+}
+
+nav{
+  background-color:white;
+}
 
 .table.is-borderless td, .table.is-borderless th {
  border: 0;
 }
 .table.is-cell-bordered td, .table.is-cell-bordered th {
  border: 1px solid #dbdbdb;
+}
+
+.fa-sm{
+  font-size:10px;
+}
+
+button.button.is-rounded.is-primary.is-small:hover {
+  color: #fa7c91;
 }
 
 

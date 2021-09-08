@@ -1,0 +1,76 @@
+<div class="tile is-vertical box is-5">
+  <div class="p-5">
+    <h1 class="title"><%= action_controller_title %></h1>
+    <%= form_with(model: publication) do |form| %>
+      <% if publication.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
+
+          <ul>
+            <% publication.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= form.label :date, class:"label"  %>
+        <%#= form.date_select :date, class: "select" %>
+        <div class="select is-small mr-2">
+          <%= form.date_select :date, {date_separator: "</div><div class='select is-small mr-2'>"} %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :region, class:"label" %>
+
+        <div class="select is-small">
+          <%= form.collection_select :region_id, Region.order(:region), :id, :name, {:include_blank => 'Select Region'} %>
+        </div>
+      </div>
+
+      <!--<div class="field">-->
+      <!--<%#= form.label :author_id %>-->
+      <!--<%#= form.text_field :author_id %>-->
+      <!--</div>-->
+      <!--Added-->
+      <div class="field">
+        <%= form.label :author, class:"label" %>
+        <div class="select is-small">
+          <%= form.collection_select :author_id, Author.order(:name), :id, :name, {:include_blank => 'Select Author'} %>
+        </div>
+      </div>
+
+      <!--<div class="field">-->
+      <!--<%#= form.label :book_id %>-->
+      <!--<%#= form.text_field :book_id %>-->
+      <!--</div>-->
+      <!--Added-->
+      <div class="field">
+        <%= form.label :book, class:"label" %>
+        <div class="select is-small">
+          <%= form.collection_select :book_id, Book.order(:title), :id, :title,{:include_blank => 'Select Book'} %>
+        </div>
+      </div>
+
+
+      <!--<div class="field">-->
+      <!--<%#= form.label :publisher_id %>-->
+      <!--<%#= form.text_field :publisher_id %>-->
+      <!--</div>-->
+
+      <!--Added-->
+      <div class="field">
+        <%= form.label :publisher, class:"label" %>
+        <div class="select is-small">
+          <%= form.collection_select :publisher_id, Publisher.order(:name), :id, :name, {:include_blank => 'Select Publisher'} %>
+        </div>
+      </div>
+
+      <div class="actions control mt-5">
+        <%= form.submit :submit, class: "button is-link is-primary is-align-content-end" %>
+      </div>
+    <% end %>
+  </div>
+</div>

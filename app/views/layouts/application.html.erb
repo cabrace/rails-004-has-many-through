@@ -17,6 +17,9 @@
         <%#= render "layouts/nav" %>
         <%= render "layouts/tabs" %>
       </nav>
+      <% if controller_name.to_s.in?(["books","authors","regions","publishers","publications"])  %>
+          <%= render "layouts/page/navigation" %>
+      <% end %>
     </header>
 
     <section class="section">
