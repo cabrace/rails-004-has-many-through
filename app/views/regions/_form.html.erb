@@ -22,9 +22,17 @@
       </div>
     </div>
 
-    <div class="actions control is-flex-direction-row is-align-content-end is-align-content-space-around">
-      <%= form.submit "Create #{controller_single_camel}", class: "button is-link is-primary is-small" %>
-    </div>
+    <!--<div class="actions control is-flex-direction-row is-align-content-end is-align-content-space-around">-->
+      <!--<%#= form.submit "Create #{controller_single_camel}", class: "button is-link is-primary is-small" %>-->
+    <!--</div>-->
+      <div class="actions control">
+        <% if action_name == "new" %>
+          <%= form.submit "Add #{controller_single_camel}", class:"button is-link is-primary" %>
+        <% else %>
+          <%= form.submit "Update", class:"button is-link is-primary" %>
+        <% end %>
+      </div>
+
   <% end %>
   </div>
 </div>

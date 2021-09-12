@@ -33,8 +33,15 @@
         </div>
       </div>
 
+      <!--<div class="actions control mt-5">-->
+        <!--<%#= form.submit "Create #{action_controller_title}", class: "button is-link is-primary is-small" %>-->
+      <!--</div>-->
       <div class="actions control mt-5">
-        <%= form.submit "Create #{action_controller_title}", class: "button is-link is-primary is-small" %>
+        <% if action_name == "new" %>
+          <%= form.submit "Add #{controller_single_camel}", class:"button is-link is-primary" %>
+        <% else %>
+          <%= form.submit "Update", class:"button is-link is-primary" %>
+        <% end %>
       </div>
   </div>
 </div>

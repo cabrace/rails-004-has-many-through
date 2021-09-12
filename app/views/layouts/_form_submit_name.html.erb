@@ -1,0 +1,8 @@
+<!--Currently cant be used because no known 'form' within this section to be inserted within the form_with (no reference)-->
+<div class="actions control">
+  <% if action_name == "new" %>
+    <%= form.submit "Add #{controller_single_camel}", class:"button is-link is-primary" %>
+  <% else %>
+    <%= form.submit "Update", class:"button is-link is-primary" %>
+  <% end %>
+</div>

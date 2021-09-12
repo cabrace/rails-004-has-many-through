@@ -17,6 +17,7 @@
         <%#= render "layouts/nav" %>
         <%= render "layouts/tabs" %>
       </nav>
+      <!--Render desired navigation section if main page is any of the following-->
       <% if controller_name.to_s.in?(["books","authors","regions","publishers","publications"])  %>
           <%= render "layouts/page/navigation" %>
       <% end %>

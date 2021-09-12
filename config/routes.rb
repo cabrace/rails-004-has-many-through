@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root "authors#index"
+
   resources :regions
   resources :publishers
   resources :publications

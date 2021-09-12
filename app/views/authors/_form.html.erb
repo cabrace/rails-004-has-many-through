@@ -21,9 +21,17 @@
         </div>
       </div>
 
+      <!--Possibly consider similare use for future, making forms more DRY-->
+      <!--<%#= render "layouts/form_submit_name" %>-->
+      
       <div class="actions control">
-        <%= form.submit "Create #{controller_single_camel}", class:"button is-link is-primary" %>
+        <% if action_name == "new" %>
+          <%= form.submit "Add #{controller_single_camel}", class:"button is-link is-primary" %>
+        <% else %>
+          <%= form.submit "Update", class:"button is-link is-primary" %>
+        <% end %>
       </div>
+
     <% end %>
   </div>
 </div>

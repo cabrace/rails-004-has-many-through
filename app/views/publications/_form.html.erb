@@ -68,9 +68,17 @@
         </div>
       </div>
 
-      <div class="actions control mt-5">
-        <%= form.submit :submit, class: "button is-link is-primary is-align-content-end" %>
+      <!--<div class="actions control mt-5">-->
+        <!--<%#= form.submit :submit, class: "button is-link is-primary is-align-content-end" %>-->
+      <!--</div>-->
+      <div class="actions control">
+        <% if action_name == "new" %>
+          <%= form.submit "Add #{controller_single_camel}", class:"button is-link is-primary" %>
+        <% else %>
+          <%= form.submit "Update", class:"button is-link is-primary" %>
+        <% end %>
       </div>
+
     <% end %>
   </div>
 </div>
